@@ -1,0 +1,6 @@
+D:\personal docs\lpnu\ai\labs\lab2\fuzzy set\lab2_fuzzy_set\bin\Debug\lab2_fuzzy_set.exe.config
+D:\personal docs\lpnu\ai\labs\lab2\fuzzy set\lab2_fuzzy_set\obj\Debug\lab2_fuzzy_set.csprojResolveAssemblyReference.cache
+D:\personal docs\lpnu\ai\labs\lab2\fuzzy set\lab2_fuzzy_set\obj\Debug\MainWindow.g.cs
+D:\personal docs\lpnu\ai\labs\lab2\fuzzy set\lab2_fuzzy_set\obj\Debug\App.g.cs
+D:\personal docs\lpnu\ai\labs\lab2\fuzzy set\lab2_fuzzy_set\obj\Debug\lab2_fuzzy_set_MarkupCompile.cache
+D:\personal docs\lpnu\ai\labs\lab2\fuzzy set\lab2_fuzzy_set\obj\Debug\lab2_fuzzy_set_MarkupCompile.lref
