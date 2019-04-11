@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using lab2_fuzzy_set;
 
 namespace lab2_fuzzy_set
 {
@@ -23,6 +24,10 @@ namespace lab2_fuzzy_set
         public MainWindow()
         {
             InitializeComponent();
+            RatingFuzzySet fs = new RatingFuzzySet();
+            fs.setRatingSet();
+            fs.buildMatrix();
+            fs.calculateBelongValues();
         }
     }
 }

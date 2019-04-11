@@ -11,6 +11,7 @@ namespace lab2_fuzzy_set
     {
         protected Dictionary<eRating, eAdvantages> fzRating;
         protected ArrayList vBelongValues;
+        protected List<List<float>> liFzMatrix;
         
         protected List<eRating> createRatingList()
         {
@@ -37,28 +38,43 @@ namespace lab2_fuzzy_set
 
         public List<List<float>> buildMatrix()
         {
-            List<List<float>> liMatrix = new List<List<float>>(fzRating.Count);
+            liFzMatrix = new List<List<float>>();
             List<eRating> liRatings = this.createRatingList();
-            for(int i = 0; i < fzRating.Count; ++i)
+            liFzMatrix.Add(new List<float>(fzRating.Count));
+            for (int i = 0; i < liRatings.Count; ++i)
             {
+                liFzMatrix[0].Add((float)fzRating[liRatings[i]]);
+            }
+
+            for (int i = 1; i < fzRating.Count; ++i)
+            {
+                liFzMatrix.Add(new List<float>());
                 for (int j = 0; j<fzRating.Count; ++j)
                 {
-
-                    liMatrix[i][j] = new float(); // = fzRating[liRatings[i]]/fzRating[liRatings[j]];
+                    float fTempRatingR = (float)fzRating[liRatings[i]];
+                    float fTempRatingC = (float)fzRating[liRatings[j]];
+                    liFzMatrix[i].Add(fTempRatingR/fTempRatingC);
                 }
             }
-            return liMatrix;
+            return liFzMatrix;
         }
 
-        protected float calculateColumnSum()
+        protected float calculateColumnSum(int iColNum)
         {
             float fSum = new float();
-
+            for(int i = 0; i<liFzMatrix[iColNum].Count; ++i)
+            {
+                fSum += liFzMatrix[iColNum][i];
+            }
             return fSum;
         }
-        ArrayList calculateBelongValues()
+        public ArrayList calculateBelongValues()
         {
-             
+            for(int i = 0; i< fzRating.Count; ++i)
+            {
+                float fColSum = this.calculateColumnSum(i);
+                vBelongValues.Add((1 / fColSum) / liFzMatrix[liFzMatrix.Count-1].Max());
+            }  
             return vBelongValues;
         }
         public void displayGraph()
@@ -68,7 +84,7 @@ namespace lab2_fuzzy_set
              
     }
 
-    enum eAdvantages
+    public enum eAdvantages
     {
         APSEND = 1,
         INTERMEDIATE_WEAK = 2,
@@ -81,7 +97,7 @@ namespace lab2_fuzzy_set
         ABSOLUTE = 9
     }
 
-    enum eRating 
+    public enum eRating 
     {
         LOW = 50,
         LIGHT_MIDDLE = 60,
