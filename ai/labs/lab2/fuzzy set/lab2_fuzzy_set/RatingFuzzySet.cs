@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace lab2_fuzzy_set
 {
-    class RatingFuzzySet
+    public class RatingFuzzySet
     {
         protected Dictionary<eRating, eAdvantages> fzRating;
         protected ArrayList vBelongValues;
         protected List<List<float>> liFzMatrix;
         
-        protected List<eRating> createRatingList()
+        public List<eRating> createRatingList()
         {
             List<eRating> liRatings = new List<eRating>();
             liRatings.Add(eRating.LOW);
@@ -105,6 +105,17 @@ namespace lab2_fuzzy_set
         LIGHT_HIGH = 80,
         HIGH = 90,
         MAXIMAL = 100
+    }
+
+    public class TempRow
+    {
+        public float _50 { get; set; }
+        public float _60 { get; set; }
+        public float _70 { get; set; }
+        public float _80 { get; set; }
+        public float _90 { get; set; }
+        public float _100 { get; set; }
+
     }
 }
 

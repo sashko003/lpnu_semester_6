@@ -18,3 +18,17 @@ D:\personal docs\lpnu_semester_6\ai\labs\lab2\fuzzy set\lab2_fuzzy_set\obj\Debug
 D:\personal docs\lpnu_semester_6\ai\labs\lab2\fuzzy set\lab2_fuzzy_set\obj\Debug\lab2_fuzzy_set.csproj.GenerateResource.Cache
 D:\personal docs\lpnu_semester_6\ai\labs\lab2\fuzzy set\lab2_fuzzy_set\obj\Debug\lab2_fuzzy_set.exe
 D:\personal docs\lpnu_semester_6\ai\labs\lab2\fuzzy set\lab2_fuzzy_set\obj\Debug\lab2_fuzzy_set.pdb
+Z:\studing\lpnu_semester_6\ai\labs\lab2\fuzzy set\lab2_fuzzy_set\bin\Debug\lab2_fuzzy_set.exe.config
+Z:\studing\lpnu_semester_6\ai\labs\lab2\fuzzy set\lab2_fuzzy_set\bin\Debug\lab2_fuzzy_set.exe
+Z:\studing\lpnu_semester_6\ai\labs\lab2\fuzzy set\lab2_fuzzy_set\bin\Debug\lab2_fuzzy_set.pdb
+Z:\studing\lpnu_semester_6\ai\labs\lab2\fuzzy set\lab2_fuzzy_set\obj\Debug\MainWindow.g.cs
+Z:\studing\lpnu_semester_6\ai\labs\lab2\fuzzy set\lab2_fuzzy_set\obj\Debug\App.g.cs
+Z:\studing\lpnu_semester_6\ai\labs\lab2\fuzzy set\lab2_fuzzy_set\obj\Debug\lab2_fuzzy_set_MarkupCompile.cache
+Z:\studing\lpnu_semester_6\ai\labs\lab2\fuzzy set\lab2_fuzzy_set\obj\Debug\lab2_fuzzy_set_MarkupCompile.lref
+Z:\studing\lpnu_semester_6\ai\labs\lab2\fuzzy set\lab2_fuzzy_set\obj\Debug\MainWindow.baml
+Z:\studing\lpnu_semester_6\ai\labs\lab2\fuzzy set\lab2_fuzzy_set\obj\Debug\lab2_fuzzy_set.g.resources
+Z:\studing\lpnu_semester_6\ai\labs\lab2\fuzzy set\lab2_fuzzy_set\obj\Debug\lab2_fuzzy_set.Properties.Resources.resources
+Z:\studing\lpnu_semester_6\ai\labs\lab2\fuzzy set\lab2_fuzzy_set\obj\Debug\lab2_fuzzy_set.csproj.GenerateResource.Cache
+Z:\studing\lpnu_semester_6\ai\labs\lab2\fuzzy set\lab2_fuzzy_set\obj\Debug\lab2_fuzzy_set.exe
+Z:\studing\lpnu_semester_6\ai\labs\lab2\fuzzy set\lab2_fuzzy_set\obj\Debug\lab2_fuzzy_set.pdb
+Z:\studing\lpnu_semester_6\ai\labs\lab2\fuzzy set\lab2_fuzzy_set\obj\Debug\lab2_fuzzy_set.csprojResolveAssemblyReference.cache

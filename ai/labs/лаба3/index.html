@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.1/css/mdb.min.css" />
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.1/js/mdb.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+
+    <script type="text/javascript" src="source.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</head>
+<body>
+<div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
+<!--<button onclick="f()">press</button>-->
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Ввести дані
+</button>
+<!--<button onclick="f1()">JC</button>-->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+            <h1>Введення даних про кандидата</h1>
+           <label for="0">Імя</label>
+            <input name = "0" type="text" id="val0" placeholder="Введи імя" size="40" value="User" required>
+
+          <p></p>
+              <label for="1">Вміння швидко приймати рішення</label>
+            <input name = "1" type="number" min="0" max = "1"  step=".01"  value="0.9" pattern = "^[-+][0]+\.[0-9]+$" id="val1" size="40" required>
+
+          <p></p>
+            <label for="2">Вміння швидко приймати рішення</label>
+            <input name = "2" type="number" min="0" max = "1"  step=".01"  value="0.6" pattern = "^[-+][0]+\.[0-9]+$" id="val2" size="40" required>
+
+          <p></p>
+            <label for="3">Cтійкість та концентрація уваги</label>
+            <input name = "3" type="number" min="0" max = "1" step=".01" value="0.5" pattern = "^[-+][0]+\.[0-9]+$" id="val3" size="40" required>
+
+          <p></p>
+            <label for="4">Зорова пам’ять</label>
+            <input name = "4" type="number" min="0" max = "1"  step=".01" value="0.5"  pattern = "^[-+][0]+\.[0-9]+$" id="val4" size="40" required>
+          <p></p>
+             <label for="5">швидкість реакції</label>
+            <input name = "5" type="number" min="0" max = "1" step=".01"  value="1" pattern = "^[-+][0]+\.[0-9]+$" id="val5" size="40" required>
+
+          <p></p>
+            <label for="6">Рухлива пам’ять</label>
+            <input name = "6" type="number" min="0" max = "1"  step=".01"  value="0.4" pattern = "^[-+][0]+\.[0-9]+$" id="val6" size="40" required>
+
+          <p></p>
+                 <label for="7">Фізична  виносливість</label>
+            <input name = "7" type="number" min="0" max = "1"  step=".01" value="0.5" pattern = "^[-+][0]+\.[0-9]+$" id="val7" size="40" required>
+
+          <p></p>
+                 <label for="8">Координація рухів</label>
+              <input name = "8" type="number" min="0" max = "1"  step=".01" value="0.5" pattern = "^[-+][0]+\.[0-9]+$" id="val8" size="40" required>
+          <p></p>
+            <label for="9">Емоційно-вольова Стійкість</label>
+            <input name = "9" type="number" min="0" max = "1" step=".01" value="0.8" pattern = "^[-+][0]+\.[0-9]+$" type="text" id="val9" size="40" required>
+
+          <p></p>
+            <label for="10">Відповідальність</label>
+            <input name = "10" type="number" min="0" max = "1" step=".01"  value="0.3" pattern = "^[-+][0]+\.[0-9]+$" id="val10" placeholder="Відповідальність" size="40"   required>
+
+          <p></p>
+
+
+            <div id="navbar">
+            <p>
+                <ul id="todo_list">
+                </ul>
+            </p>
+            </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Вийти </button>
+        <button  class="btn btn-primary" type="submit" data-dismiss="modal" onclick="SaveChanges()">Зберегти</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+            <button id = "#result" onclick="func()">Result</button>
+            <thead id = "result">
+
+            </thead>
+
+            <tbody id = "result1">
+
+            </tbody>
+
+</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Вийти </button>
+        <button  class="btn btn-primary" type="submit" data-dismiss="modal" onclick="SaveChanges()">Зберегти</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<table class="table table-striped table-responsive-md btn-table" id = "myTable">
+<h3 align='center'>         Матриця професії-характеристики       </h3>
+  <thead id = "table_head">
+
+  </thead>
+
+  <tbody id = "table_data">
+
+  </tbody>
+
+   <thead id = "table_head1">
+
+  </thead>
+
+  <tbody id = "table_data1">
+
+  </tbody>
+
+</table>
+
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script>
+
+
+
+    var Saver = [];
+    var Work = null;
+    var SattiMarks_ = {};
+
+    function res(index) {
+	var chart = new CanvasJS.Chart("chartContainer", {
+		title:{
+			text: "Графік оцінки вибору професія-особистість"
+		},
+		data: [
+		{
+			// Change type to "doughnut", "line", "splineArea", etc.
+			type: "column",
+			dataPoints: [
+				{ label: "Manager",  y: Saver[index][0]  },
+				{ label: "Programmer", y: Saver[index][1]  },
+				{ label: "Driver",color:"Yellow", y: Saver[index][2]  },
+				{ label: "Referrer",  y: Saver[index][3]  },
+				{ label: "Translator",  y: Saver[index][4]  }
+			]
+		}
+		]
+	});
+	chart.render();
+}
+
+
+    function SaveChanges(){
+        var s = "";
+        //alert("hi");
+        //alert($("#val"+1).val());
+        var koefs = [$("#val0").val()];
+        var qs = [];
+        for(var i = 1; i< 11;i++){
+            var t = parseFloat($("#val"+i).val());
+           // alert(typeof  t);
+            //alert(t);
+            qs.push(t);
+            koefs.push(t);
+            //s += $("#val"+i).value()+" ";
+
+        }
+
+        const skills = ["швидкість та гнучкість мислення","вміння швидко приймати рішення",
+                        "стійкість та концентрація уваги", "зорова пам”ять",
+                        "швидкість реакції", "Рухлива память",
+                        "Фізична виносливість","Координація рухів",
+                        "Емоційно-Вольова стійкість","Відповідальність","Обрахувати"];
+        appendHeadforWorker(skills);
+        appendMatrixBodyforWorker(koefs);
+        сalc(Work,qs)
+        /*alert(JSON.stringify(koefs));
+        //alert("hekk");
+        const lis = Array.from(document.querySelectorAll('#navbar>ul>li'));
+        SattiMarks_ = {};
+        //alert(SattiMarks_.length);
+        Array.from(document.querySelectorAll('#navbar>ul>li'),li => SattiMarks_[Number(li.querySelector('.f').textContent ).toFixed(2) ] = parseFloat(li.querySelector('.s').textContent )
+                                                                                );
+        //alert(SattiMarks_.length);
+
+
+        appendHead(Object.keys(SattiMarks_));
+        var matrix = initMatrixCells(SattiMarks_);
+        appendMatrixBody(Object.keys(SattiMarks_),matrix);
+        var sumArray = sumByColumns(matrix);
+        var reversedSum = reversedSum_(sumArray);
+
+        var Membershipf = Membershipfunction(reversedSum, Max(reversedSum));
+        appendEvaluatedValuesFromMatrix([sumArray,reversedSum,Membershipf]);
+        /*alert(JSON.stringify(Membershipf));
+
+         for(var i = 0; i < matrix.length;i++){
+            var a = "";
+            for(var j = 0; j < matrix[i].length;j++) {
+               a += matrix[i][j]+" ";
+            }
+            ///alert(a)
+            console.log(a);
+        }
+         console.log(sumArray);
+         console.log(reversedSum);
+         console.log(Membershipf);*/
+
+      /*  var keys = [];
+        for(var item in Object.keys(SattiMarks)){
+            keys.push(Number(item));
+        }*/
+       // CreateGraph(Object.keys(SattiMarks_),Membershipf);
+        //alert(JSON.stringify(SattiMarks_));
+        //$("#exampleModal").dialog("close");
+    }
+    function f() {
+       // alert("hello");
+    Plotly.newPlot('myDiv', {}, {}, {showSendToCloud: true});
+    }
+    function initMatrixCells(SattiMarks) {
+        var matrix = [];
+        var temp = [];
+        for (var key1 in SattiMarks) {
+            temp = [];
+            for (var key2 in SattiMarks){
+
+                if(key1 === key2){
+                    temp.push(1);
+                }
+                else {
+
+                    temp.push( Number((SattiMarks[key2] / SattiMarks[key1]).toFixed(4)) );
+                }
+            }
+            matrix.push(temp);
+        }
+        return matrix;
+    }
+
+
+    function sumByColumns(matrix) {
+        var sumArray = [];
+
+        for (var i = 0; i < matrix.length;i++)
+        {
+            sumArray[i] = 0;
+        }
+        for(var i = 0; i < matrix.length;i++){
+            var a = "";
+            for(var j = 0; j < matrix[i].length;j++) {
+                sumArray[j] +=matrix[i][j];
+            }
+          //  sumArray[j] = Number(sumArray[j]).toFixed(4);
+        }
+      //  alert(sumArray.length);
+        for(var i = 0; i<sumArray.length;i++){
+            sumArray[i] = Number( sumArray[i]).toFixed(4);
+        }
+        return sumArray;
+    }
+    function reversedSum_(sumArray){
+        var result = [];
+        for( var i = 0; i< sumArray.length;i++)
+        {
+            result[i] = 0;
+            result[i] = Number((1/sumArray[i]).toFixed(4));
+        }
+        return result;
+    }
+
+    function Membershipfunction(reverced,max){
+       // alert(max);
+        //alert(JSON.stringify(reverced));
+        var result = [];
+        for ( var i = 0; i<reverced.length;i++){
+            result[i] = 0;
+            result[i] = Number((reverced[i]/max).toFixed(4));
+        }
+        return result;
+    }
+
+    function Max(sumArray){
+        var max = sumArray[0];
+        for(var i = 1; i< sumArray.length;i++)
+        {
+            if(sumArray[i] > max){
+                max = sumArray[i];
+            }
+        }
+        return max;
+    }
+
+    function CreateGraph(x,y){
+        /*alert("haha");
+        alert(JSON.stringify(x));
+        alert(JSON.stringify(y));*/
+         var data = [
+          {
+            x: x,
+            y: y,
+            type: 'scatter'
+          }
+        ];
+
+        var layout = {
+          title: {
+            text:'Графік начіткої множини',
+            font: {
+              family: 'Courier New, monospace',
+              size: 24
+            },
+            xref: 'paper',
+            x: 0.05,
+          },
+          xaxis: {
+            title: {
+              text: ' Оцінка',
+              font: {
+                family: 'Courier New, monospace',
+                size: 18,
+                color: '#7f7f7f'
+              }
+            },
+          },
+          yaxis: {
+            title: {
+              text: 'Функція належності нечіткої множини',
+              font: {
+                family: 'Courier New, monospace',
+                size: 18,
+                color: '#7f7f7f'
+              }
+            }
+          }
+        };
+
+
+        Plotly.newPlot('myDiv', data, layout, {showSendToCloud: true});
+    }
+    function appendHeadforWorker(values){
+
+        $("#table_head1>tr").remove();
+        var str = "<tr>"+ "<td>" + '         Кандидат          ' + "</td>";
+        for ( var i = 0; i< values.length;i++){
+            str += "<td>" + values[i] + "</td>"
+        }
+        str +="</tr>";
+
+       // alert(str);
+                $('#table_head1').append(str);
+
+    }
+
+
+
+    function appendHead(values){
+        $("#table_head>tr").remove();
+        var str = "<tr>"+ "<td>" + '         Спеціалізація          ' + "</td>";
+        for ( var i = 0; i< values.length;i++){
+            str += "<td>" + values[i] + "</td>"
+        }
+        str +="</tr>";
+
+       // alert(str);
+                $('#table_head').append(str);
+
+    }
+
+   /* function appendMatrixBody(keys,values){
+        $("#table_data>tr").remove();
+        for (var j = 0; j<values.length;j++)
+        {
+            var str = "<tr>"+ "<td width='5px' height='5%'>" + keys[j] + "</td>";
+            for ( var i = 0; i< values[j].length;i++){
+                str += "<td width='5px' height='5%'>" + values[j][i] + "</td>"
+            }
+            str +="</tr>";
+            $('#table_data').append(str);
+        }
+
+
+    }*/
+
+   /* function appendMatrixBody(WorkKoefs){
+        $("#table_data>tr").remove();
+        for (var j = 0; j<values.length;j++)
+        {
+            var str = "<tr>"+ "<td width='5px' height='5%'>" + keys[j] + "</td>";
+            for ( var i = 0; i< values[j].length;i++){
+                str += "<td width='5px' height='5%'>" + values[j][i] + "</td>"
+            }
+            str +="</tr>";
+            $('#table_data').append(str);
+        }
+
+
+    }*/
+
+    function appendMatrixBody(Marks){
+        $("#table_data>tr").remove();
+     //   alert(JSON.stringify(Marks));
+
+        //for (var j = 0; j<values.length;j++)
+        for (var val in Marks)
+        {
+
+            var str = "<tr>"+ "<td width='5px' height='5%'>" + val + "</td>";
+            for ( var i = 0; i< Marks[val].length;i++){
+                str += "<td width='5px' height='5%'>" + Marks[val][i] + "</td>"
+            }
+            str +="</tr>";
+            $('#table_data').append(str);
+        }
+
+    }
+
+    function appendMatrixBodyforWorker(Marks){
+        //$("#table_data1>tr").remove();
+        //alert(JSON.stringify(Marks));
+
+        //for (var j = 0; j<values.length;j++)
+        var val1 = "haha";
+        var str = "<tr>"+ "<td width='5px' height='5%'>" + Marks[0] + "</td>";
+
+           for ( var i = 1; i< Marks.length;i++){
+                str += "<td width='5px' height='5%'>" + Marks[i] + "</td>"
+            }
+
+
+
+            <!--onclick=\"isa('"+Marks+"')\"-->
+             str += "<td width='5px' height='5%'>'<button   onclick=\"isa('"+Saver.length+"')\" >Графік оцінки вибору</button>'</td>"
+            str +="</tr>";
+            $('#table_data1').append(str);
+
+
+
+    }
+    function isa(v){
+       // alert(v);
+       // alert(typeof v);
+       // alert(Saver[v]);
+        res(v);
+    }
+
+    function сalc(WorkKoefs,UserKoefs){
+        var all_koefs = [];
+       // alert(JSON.stringify(WorkKoefs));
+       // alert(JSON.stringify(UserKoefs));
+        console.log(JSON.stringify(WorkKoefs));
+        console.log(JSON.stringify(WorkKoefs[0]));
+        //console.log(WorkKoefs.length);
+       // console.log(JSON.stringify(UserKoefs));
+        for(var item = 0; item < WorkKoefs.length;item++)
+        {
+           // alert(JSON.stringify(item));
+           // console.log(JSON.stringify(item));
+            var temp = [];
+            for(var i = 0; i<  UserKoefs.length; i++){
+                 console.log(typeof WorkKoefs[item][i] +"  "+typeof UserKoefs[i]);
+                 console.log(WorkKoefs[item][i] +" "+ UserKoefs[i]);
+                if(WorkKoefs[item][i] < UserKoefs[i]){
+                    temp.push(WorkKoefs[item][i]);
+                }
+                else {
+                     temp.push(UserKoefs[i]);
+                }
+            }
+            console.log(JSON.stringify(temp));
+            var save = temp[0];
+            for(var i = 1; i<temp.length;i++){
+                if(temp[i] > save){save = temp[i];}
+            }
+            console.log(save);
+            all_koefs.push(save);
+            console.log(JSON.stringify(all_koefs));
+
+        }
+         Saver.push(all_koefs);
+        console.log(JSON.stringify(all_koefs));
+
+       // alert(JSON.stringify(all_koefs));
+    }
+
+
+    $(document).ready(function() {
+        const skills = ["швидкість та гнучкість мислення","вміння швидко приймати рішення",
+                        "стійкість та концентрація уваги", "зорова пам”ять",
+                        "швидкість реакції", "Рухлива память",
+                        "Фізична виносливість","Координація рухів",
+                        "Емоційно-Вольова стійкість","Відповідальність"];
+        const WorkKoefs = {
+            "manager": [0.9,0.9,0.8,0.4,0.5,0.3,0.6,0.2,0.9,0.8],
+            "programmer":[0.8,0.5,0.9,0.3,0.1,0.2,0.2,0.2,0.5,0.5],
+            "driver":[0.3,0.9,0.6,0.5,0.9,0.8,0.9,0.8,0.6,0.3],
+            "referator":[0.5,0.4,0.5,0.5,0.2,0.2,0.3,0.3,0.9,0.8],
+            "translater":[0.7,0.8,0.8,0.2,0.6,0.2,0.2,0.3,0.3,0.2],
+
+        }
+
+
+        //const SattiMarks = {50:9,60:7,70:5,80:3,90:1,100:1  };
+        appendHead(skills);
+        //var matrix = initMatrixCells(SattiMarks);
+        appendMatrixBody(WorkKoefs);
+        Work = Object.values( WorkKoefs);
+
+        /*var sumArray = sumByColumns(matrix);
+        var reversedSum = reversedSum_(sumArray);
+
+        var Membershipf = Membershipfunction(reversedSum, Max(reversedSum));
+        appendEvaluatedValuesFromMatrix([sumArray,reversedSum,Membershipf]);
+
+        CreateGraph(Object.keys(SattiMarks),Membershipf);*/
+    });
+
+    $( "#exampleModal" ).on('shown', function(){
+    alert("I want this to appear after the modal has opened!");
+});
+</script>
+</body>
+</html>

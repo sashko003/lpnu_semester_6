@@ -3,10 +3,293 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         xmlns:local="clr-namespace:lab2_fuzzy_set"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Grid.RowDefinitions >
+            <RowDefinition Name="header" Height="10*">
+
+            </RowDefinition>
+            <RowDefinition Name="ratings" Height="40*">
+
+            </RowDefinition>
+            <RowDefinition Name="matrix" Height="80*">
+                
+            </RowDefinition>
+            <RowDefinition Name="functions" Height="30*">
+
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="Matrix" AutoGenerateColumns="True" Grid.Row="2" ItemsSource="{Binding fs.liMatrix}">
+
+
+            <DataGrid.Columns>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!--<FlowDocumentReader UseLayoutRounding="True" SnapsToDevicePixels="True" Grid.Row="2">
+            <FlowDocumentReader.Resources>
+                <Style TargetType="TableCell">
+                    <Setter Property="TextAlignment" Value="Center"/>
+                </Style>
+            </FlowDocumentReader.Resources>
+            <FlowDocument>
+                <Table CellSpacing="0" Name="Matrix">
+                    <Table.Columns>
+                        <TableColumn/>
+                        <TableColumn/>
+                        <TableColumn/>
+                        <TableColumn/>
+                        <TableColumn/>
+                        <TableColumn/>
+                        <TableColumn/>
+                    </Table.Columns>
+                    <TableRowGroup>
+                        <TableRow Name="Header">
+                            <TableCell BorderBrush="Black" BorderThickness="1">
+                                <Paragraph FontWeight="Bold">Ratings</Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold">50</Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold">60</Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold">70</Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold">80</Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold">90</Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold">100</Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow Name="_50">
+                            <TableCell BorderBrush="Black" BorderThickness="1">
+                                <Paragraph FontWeight="Bold">50</Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow Name="_60">
+                            <TableCell BorderBrush="Black" BorderThickness="1">
+                                <Paragraph FontWeight="Bold">60</Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow Name="_70">
+                            <TableCell BorderBrush="Black" BorderThickness="1">
+                                <Paragraph FontWeight="Bold">70</Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow Name="_80">
+                            <TableCell BorderBrush="Black" BorderThickness="1">
+                                <Paragraph FontWeight="Bold">80</Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow Name="_90">
+                            <TableCell BorderBrush="Black" BorderThickness="1">
+                                <Paragraph FontWeight="Bold">90</Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow Name="_100">
+                            <TableCell BorderBrush="Black" BorderThickness="1">
+                                <Paragraph FontWeight="Bold">100</Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold"></Paragraph>
+                            </TableCell>
+                        </TableRow>
+                    </TableRowGroup>
+                </Table>
+            </FlowDocument>
+        </FlowDocumentReader>-->
+
+        <FlowDocumentReader UseLayoutRounding="True" SnapsToDevicePixels="True" Grid.Row="1">
+            <FlowDocumentReader.Resources>
+                <Style TargetType="TableCell">
+                    <Setter Property="TextAlignment" Value="Center"/>
+                </Style>
+            </FlowDocumentReader.Resources>
+            <FlowDocument>
+                <Table CellSpacing="0" Name="Data">
+                    <Table.Columns>
+                        <TableColumn/>
+                        <TableColumn/>
+                        <TableColumn/>
+                        <TableColumn/>
+                        <TableColumn/>
+                        <TableColumn/>
+                        <TableColumn/>
+                    </Table.Columns>
+                    <TableRowGroup>
+                        <TableRow Name="Ratings">
+                            <TableCell BorderBrush="Black" BorderThickness="1">
+                                <Paragraph FontWeight="Bold">Ratings</Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold">50</Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold">60</Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold">70</Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold">80</Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold">90</Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold">100</Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow Name="Assesments">
+                            <TableCell BorderBrush="Black" BorderThickness="1">
+                                <Paragraph FontWeight="Bold">Assesments</Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold">9</Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold">8</Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold">7</Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold">5</Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold">3</Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="0,1,1,1">
+                                <Paragraph FontWeight="Bold">1</Paragraph>
+                            </TableCell>
+                        </TableRow>
+                    </TableRowGroup>
+                </Table>
+            </FlowDocument>
+        </FlowDocumentReader>
+        <UniformGrid Rows="1" Columns="0" Grid.Row="3" Margin="10">
+            <Button Content="Fill Matrix" Margin="5" />
+            <Button Content="Calculate" Margin="5" />
+            <Button Content="Build graph" Margin="5"/>
+        </UniformGrid>
     </Grid>
+
 </Window>
